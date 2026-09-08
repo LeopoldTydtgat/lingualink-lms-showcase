@@ -44,7 +44,7 @@ flowchart LR
     CR[Cron jobs] --> S
 ```
 
-TODO: polished system diagram (draw.io) here
+![System architecture](architecture.png)
 
 ### The parts I am proudest of
 
