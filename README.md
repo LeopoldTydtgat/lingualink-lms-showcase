@@ -30,20 +30,6 @@ It launched in August 2026 and has run in production since, with real money and 
 
 ### Architecture
 
-```mermaid
-flowchart LR
-    U[Teachers / Students / Admin] --> V[Next.js on Vercel]
-    V --> S[(Supabase Postgres + RLS)]
-    V --> A[Supabase Auth]
-    V --> ST[Supabase Storage]
-    V --> G[Microsoft Graph API - Teams meetings]
-    V --> GC[Google Calendar API - busy sync]
-    V --> R[Resend - transactional email]
-    V --> SE[Sentry - error monitoring]
-    CI[GitHub Actions - 658 tests] --> V
-    CR[Cron jobs] --> S
-```
-
 ![System architecture](architecture.png)
 
 ### The parts I am proudest of
