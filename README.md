@@ -81,7 +81,7 @@ Everything I practised on this platform maps directly onto core cloud engineerin
 | CSRF origin gate, rate limiting, session revocation, audit cycle | Defense in depth | WAF, security groups, GuardDuty mindset |
 | Secrets kept in environment config, never in code, secret scanning enabled | Secrets management | Secrets Manager, Parameter Store |
 
-The concepts transferred here are platform-independent: the same least-privilege thinking, the same "monitoring needs monitoring" lesson, the same recovery-path discipline. I am currently studying for the AWS Solutions Architect Associate (SAA-C03) certification, alongside CompTIA A+ and Network+ which I already hold.
+The concepts transferred here are platform-independent: the same least-privilege thinking, the same "monitoring needs monitoring" lesson, the same recovery-path discipline. I am currently studying for the AWS Solutions Architect Associate (SAA-C03) certification. I already hold CompTIA A+ and Network+.
 
 ---
 
