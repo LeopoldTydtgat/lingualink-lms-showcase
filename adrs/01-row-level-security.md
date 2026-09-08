@@ -1,6 +1,7 @@
 # ADR 1: Row Level Security as the primary security boundary
 
 **Status:** Adopted, in production
+
 **Date:** 2026
 
 ## Context
