@@ -72,13 +72,11 @@ More in the decision write-ups below.
 
 ## Decision write-ups (ADRs)
 
-TODO: link each when written
-
-1. Security model: Row Level Security as the primary boundary
-2. Idempotency keys on the booking money-path
-3. Monitoring and error tracking with Sentry
-4. Backup and disaster recovery approach
-5. Timezone handling across three portals
+1. [Security model: Row Level Security as the primary boundary](adrs/01-row-level-security.md)
+2. [Idempotency keys on the booking money-path](adrs/02-idempotency-keys.md)
+3. [Monitoring and error tracking with Sentry](adrs/03-monitoring-and-error-tracking.md)
+4. [Backup and disaster recovery approach](adrs/04-backup-and-disaster-recovery.md)
+5. [Timezone handling across three portals](adrs/05-timezone-handling.md)
 
 ---
 
