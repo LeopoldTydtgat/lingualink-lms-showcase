@@ -1,6 +1,7 @@
 # ADR 2: Idempotency keys on the booking money-path
 
 **Status:** Adopted, in production
+
 **Date:** 2026
 
 ## Context
