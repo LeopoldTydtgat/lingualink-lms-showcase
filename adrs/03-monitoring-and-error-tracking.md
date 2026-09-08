@@ -1,6 +1,7 @@
 # ADR 3: Monitoring and error tracking
 
 **Status:** Adopted, in production
+
 **Date:** 2026
 
 ## Context
