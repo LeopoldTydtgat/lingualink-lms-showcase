@@ -1,6 +1,7 @@
 # ADR 5: Timezone handling across three portals
 
 **Status:** Adopted, in production
+
 **Date:** 2026
 
 ## Context
