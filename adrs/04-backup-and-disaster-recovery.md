@@ -1,6 +1,7 @@
 # ADR 4: Backup and disaster recovery
 
 **Status:** Adopted, in production - with openly tracked gaps
+
 **Date:** 2026
 
 ## Context
