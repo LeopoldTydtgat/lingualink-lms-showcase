@@ -40,7 +40,9 @@ It launched in August 2026 and has run in production since, with real money and 
 - **Signed direct uploads.** File uploads bypass the hosting platform's body-size cap by uploading directly to storage with short-lived signed URLs.
 - **Defense in depth.** CSRF origin gate, rate limiting, session revocation, and a completed security audit cycle with tracked findings.
 
-TODO: screenshot gallery (test accounts only)
+**Watch the demo:** [90-second overview](https://youtu.be/DxrWdP0GBIo)
+
+TODO: technical walkthrough video, screenshot gallery (test accounts only)
 
 ---
 
