@@ -6,7 +6,7 @@ A custom learning management system running in production for a real language sc
 
 > **Note:** The production repository is private. This showcase contains the case study, architecture, and selected sanitised excerpts. All screenshots and demos use seeded test accounts only.
 
-TODO: demo GIF here (60-90s recruiter cut, embedded)
+![LinguaLink LMS demo - booking a class](demo.gif)
 
 ---
 
