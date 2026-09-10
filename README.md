@@ -45,6 +45,7 @@ It launched in August 2026 and has run in production since, with real money and 
 **Technical walkthrough:** [3-minute deep dive](https://youtu.be/_QfQaxn1zBw)
 
 TODO: screenshot gallery (test accounts only)
+
 ---
 
 ## Key learnings - what broke and what it taught me
