@@ -44,7 +44,15 @@ It launched in August 2026 and has run in production since, with real money and 
 
 **Technical walkthrough:** [3-minute deep dive](https://youtu.be/_QfQaxn1zBw)
 
-TODO: screenshot gallery (test accounts only)
+### Screenshots
+
+| | |
+|---|---|
+| ![Student dashboard](screenshots/01-student-dashboard.png) | ![Booking calendar](screenshots/02-booking-calendar.png) |
+| ![Student progress](screenshots/03-student-progress.png) | ![Study tab](screenshots/04-study-tab.png) |
+| ![Teacher upcoming classes](screenshots/05-teacher-upcoming.png) | ![Class report with CEFR assessment](screenshots/06-class-report.png) |
+
+All screenshots use seeded test accounts.
 
 ---
 
