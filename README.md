@@ -16,6 +16,10 @@ A language school was paying for a third-party classroom platform that could not
 
 It launched in August 2026 and has run in production since, with real money and real schedules depending on it every day.
 
+In addition to the LMS, I built and maintain the company's public marketing
+site at [lingualinkonline.com](https://www.lingualinkonline.com), giving
+end-to-end delivery of the client's online presence.
+
 **Stack:** Next.js (TypeScript) - Supabase (Postgres, Auth, RLS, Storage, Edge Functions) - Vercel - Microsoft Graph API - Google Calendar API - Resend - Sentry - GitHub Actions
 
 ---
