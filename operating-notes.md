@@ -1,6 +1,6 @@
 # Operating notes
 
-A dated log of real production incidents and decisions from building and running this platform. Three lines each: what happened, what I did, what it changed. Newest first. All entries are retyped from the private repository's history and sanitised.
+A dated log of real production incidents and decisions from building and running this platform. Each entry covers what happened, what I changed, and the resulting improvement. Newest first. All entries are retyped from the private repository's history and sanitised.
 
 **14 Sep 2026 - Invoice status ground truth**
 The database check constraint allowed the statuses submitted and late, but older code and documentation claimed uploaded and overdue, values that never existed. I corrected the code to match the database, and built an admin-only unmark-paid that safely reverses a mistaken payment marking and recomputes state. The database is now treated as the single source of truth, and admin mistakes are recoverable without touching data by hand.
@@ -23,7 +23,7 @@ Multiple pages were rendering dates and times in the browser's timezone instead 
 **29 Jul 2026 - Function recreate resets execute grants**
 Recreating a database function via drop-and-create silently restored execute permission to roles that had been deliberately revoked. I caught it in an audit and added an explicit re-revoke and re-grant step to the standing migration checklist for every function recreate. Least-privilege on database functions now survives routine maintenance.
 
-**07 Jul 2026 - Student-forgeable no-show closed**
+**07 Jul 2026 - Closed a student-forgeable no-show path**
 The write policies on the lessons table would have allowed a student session to record a teacher no-show, which affects teacher pay. I moved the lesson insert to a server-side privileged client and dropped the student write policies and residual grants entirely. Pay-affecting records can now only be created by trusted server code.
 
 **19 Jun 2026 - Column grants fail silently**
