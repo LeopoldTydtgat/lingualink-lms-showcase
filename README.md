@@ -14,7 +14,7 @@ A custom learning management system running in production for a real language sc
 
 A language school was paying for a third-party classroom platform that could not match how the business actually works. I replaced it with a custom platform: three portals (teacher, student, admin), automated Microsoft Teams class links, booking with atomic hour-balance accounting, teacher pay calculation, and a self-study library.
 
-It launched in August 2026 and has run in production since, with real money and real schedules depending on it every day.
+It launched in August 2026 and has run in production since, with real money and real schedules depending on it every day. I also built and maintain the client's public marketing site, so the delivery covers their entire online presence end to end.
 
 **Watch it work:** [90-second overview](https://youtu.be/DxrWdP0GBIo)
 
