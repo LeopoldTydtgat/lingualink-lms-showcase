@@ -74,7 +74,7 @@ Real production taught me more than any tutorial. Three examples:
 2. **Column-level grants fail silently.** A `select('*')` against a table carrying any column-level revoke returns null rows with no error at all. Cost me hours the first time. Rule now: explicit column lists on every sensitive table, and grant verification after every DDL change.
 3. **Client-side error monitoring was dead for weeks and nothing looked wrong.** The monitoring DSN was missing the framework's public env prefix, so the client bundle silently shipped without it. The lesson: monitoring needs monitoring - proof of receipt, not just configuration.
 
-More in the decision write-ups below.
+More in the decision write-ups below, and a full dated incident log in [operating-notes.md](operating-notes.md).
 
 ---
 
