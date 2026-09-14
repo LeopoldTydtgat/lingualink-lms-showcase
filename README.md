@@ -16,23 +16,31 @@ A language school was paying for a third-party classroom platform that could not
 
 It launched in August 2026 and has run in production since, with real money and real schedules depending on it every day.
 
-In addition to the LMS, I built and maintain the company's public marketing
-site at [lingualinkonline.com](https://www.lingualinkonline.com), giving
-end-to-end delivery of the client's online presence.
+**Watch it work:** [90-second overview](https://youtu.be/DxrWdP0GBIo)
 
 **Stack:** Next.js (TypeScript) - Supabase (Postgres, Auth, RLS, Storage, Edge Functions) - Vercel - Microsoft Graph API - Google Calendar API - Resend - Sentry - GitHub Actions
 
 ---
 
-## The 3-minute version
+## What changed for the business
 
-### What it does
+- Students book their own classes against live teacher availability. Booking, cancelling and rescheduling deduct and refund hours automatically, so scheduling no longer passes through the admin.
+- Student hour balances are enforced by the database, with a full transaction log of every top-up, booking, refund and adjustment. No more spreadsheet tracking.
+- Teacher pay is calculated by the system from completed lessons and each teacher's rate. Month end is a review step, not a manual reconciliation.
+- Microsoft Teams class links are generated automatically per lesson and stay stable through a substitute teacher swap. Students never have to chase a new link.
+- Homework and self-study live inside the platform: teachers assign from a shared library, students complete and track it in their own portal.
+- The business no longer depends on a third-party classroom platform. Video runs on the Microsoft 365 subscription it already had.
+- The rules of the platform now belong to the business: cancellation windows, pay logic and who sees what are set by the client, not fixed by a vendor.
+
+---
+
+## What it does
 
 - **Teacher portal:** schedule and availability, class reports with CEFR level tracking, student management, messaging, billing summaries
 - **Student portal:** class booking against live teacher availability, hour balances, homework and self-study library, progress tracking
 - **Admin portal:** full oversight - accounts, classes, reports, teacher pay, hour top-ups, study library management
 
-### Architecture
+## Architecture
 
 ![System architecture](architecture.png)
 
@@ -42,16 +50,14 @@ end-to-end delivery of the client's online presence.
 - **Atomic booking with idempotency keys.** Booking, cancelling, and rescheduling are single Postgres functions. Hours are deducted, refunded, and never double-spent, even on retries or double-clicks.
 - **Stable Teams links.** Meeting links are tied to the lesson, not the teacher. A substitute teacher swap never changes the link a student already received.
 - **Signed direct uploads.** File uploads bypass the hosting platform's body-size cap by uploading directly to storage with short-lived signed URLs.
-- **Defense in depth.** CSRF origin gate, rate limiting, session revocation, and a completed security audit cycle with tracked findings.
-
-**Watch the demo:** [90-second overview](https://youtu.be/DxrWdP0GBIo)
+- **Defence in depth.** CSRF origin gate, rate limiting, session revocation, and a completed security audit cycle with tracked findings.
 
 **Technical walkthrough:** [3-minute deep dive](https://youtu.be/_QfQaxn1zBw)
 
 ### Screenshots
 
 | | |
-|---|---|
+| --- | --- |
 | ![Student dashboard](screenshots/01-student-dashboard.png) | ![Booking calendar](screenshots/02-booking-calendar.png) |
 | ![Student progress](screenshots/03-student-progress.png) | ![Study tab](screenshots/04-study-tab.png) |
 | ![Teacher upcoming classes](screenshots/05-teacher-upcoming.png) | ![Class report with CEFR assessment](screenshots/06-class-report.png) |
@@ -82,28 +88,15 @@ More in the decision write-ups below.
 
 ---
 
-## Cloud competency mapping
+## How this was built
 
-Everything I practised on this platform maps directly onto core cloud engineering disciplines. This table is the bridge.
-
-| What I did on LinguaLink | Cloud discipline | AWS equivalent |
-|---|---|---|
-| Row Level Security, column-level grants, role-gated API routes | Least-privilege access control | IAM policies, resource policies |
-| Sentry with proof-of-receipt verification (found and fixed a silently dead client DSN) | Observability and alerting | CloudWatch, X-Ray |
-| GitHub Actions CI gating every deploy behind 658 automated tests | CI/CD pipelines | CodePipeline, CodeBuild |
-| Scheduled backups plus a documented restore path | Backup and disaster recovery | AWS Backup, RDS snapshots |
-| Cron jobs for reminders and calendar sync, with failure monitoring | Scheduled and event-driven workloads | EventBridge, Lambda |
-| Idempotent atomic operations on the booking money-path | Reliable distributed operations | SQS idempotency patterns, DynamoDB conditional writes |
-| CSRF origin gate, rate limiting, session revocation, audit cycle | Defense in depth | WAF, security groups, GuardDuty mindset |
-| Secrets kept in environment config, never in code, secret scanning enabled | Secrets management | Secrets Manager, Parameter Store |
-
-The concepts transferred here are platform-independent: the same least-privilege thinking, the same "monitoring needs monitoring" lesson, the same recovery-path discipline. I am currently studying for the AWS Solutions Architect Associate (SAA-C03) certification. I already hold CompTIA A+ and Network+.
+This system was built using AI-assisted development, with Claude as the delivery method. I designed the architecture and own the security model, the data model, the booking logic, testing, deployment and the ongoing operation of the platform, and I can explain and defend every production decision. This is what I do: build and operate multi-user business systems where permissions, scheduling, integrations, transactions and reliability matter.
 
 ---
 
-## How this was built
+## Cloud competency
 
-I am not a traditional developer. I architected this system and directed AI tooling (Claude) to implement it, while owning every decision myself: the security model, the data model, the booking logic, the operational practices, and every line that ships. I can explain and defend any part of this system without assistance.
+The disciplines practised here map directly onto core cloud engineering work: least-privilege access control, observability, CI/CD, backup and recovery, and reliable operations. The full mapping, with AWS equivalents and certifications, is in [CLOUD_COMPETENCY.md](CLOUD_COMPETENCY.md).
 
 ---
 
