@@ -12,7 +12,7 @@ Everything I practised building and operating LinguaLink maps onto core cloud en
 | Scheduled backups plus a documented restore path | Backup and disaster recovery | AWS Backup, RDS snapshots |
 | Cron jobs for reminders and calendar sync, with failure monitoring | Scheduled and event-driven workloads | EventBridge, Lambda |
 | Idempotent atomic operations on the booking money-path | Reliable distributed operations | SQS idempotency patterns, DynamoDB conditional writes |
-| CSRF origin gate, rate limiting, session revocation, audit cycle | Defence in depth | WAF, security groups, GuardDuty mindset |
+| CSRF origin gate, rate limiting, session revocation, internal security review | Defence in depth | WAF, security groups, GuardDuty mindset |
 | Secrets kept in environment config, never in code, secret scanning enabled | Secrets management | Secrets Manager, Parameter Store |
 
 The concepts transferred here are platform-independent: the same least-privilege thinking, the same "monitoring needs monitoring" lesson, the same recovery-path discipline.

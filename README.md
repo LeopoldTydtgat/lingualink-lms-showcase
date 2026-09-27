@@ -16,6 +16,10 @@ A language school was paying for a third-party classroom platform that could not
 
 It launched in August 2026 and has run in production since, with real money and real schedules depending on it every day. I also built and maintain the client's public marketing site, so the delivery covers their entire online presence end to end.
 
+> "Booking, hours, reports and teacher pay used to be manual. The platform handles all of it, and it just works, every day."
+>
+> Shannon, LinguaLink Online
+
 **Watch it work:** [90-second overview](https://youtu.be/DxrWdP0GBIo)
 
 **Stack:** Next.js (TypeScript) - Supabase (Postgres, Auth, RLS, Storage, Edge Functions) - Vercel - Microsoft Graph API - Google Calendar API - Resend - Sentry - GitHub Actions
@@ -50,7 +54,7 @@ It launched in August 2026 and has run in production since, with real money and 
 - **Atomic booking with idempotency keys.** Booking, cancelling, and rescheduling are single Postgres functions. Hours are deducted, refunded, and never double-spent, even on retries or double-clicks.
 - **Stable Teams links.** Meeting links are tied to the lesson, not the teacher. A substitute teacher swap never changes the link a student already received.
 - **Signed direct uploads.** File uploads bypass the hosting platform's body-size cap by uploading directly to storage with short-lived signed URLs.
-- **Defence in depth.** CSRF origin gate, rate limiting, session revocation, and a completed security audit cycle with tracked findings.
+- **Defence in depth.** CSRF origin gate, rate limiting, session revocation, and a completed internal security review with tracked findings.
 
 **Technical walkthrough:** [3-minute deep dive](https://youtu.be/_QfQaxn1zBw)
 
